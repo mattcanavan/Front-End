@@ -16,7 +16,7 @@ const onSubmit = (evt) => {
 }
 
 return (
-
+<div id='maxform'>
 <form onSubmit={onSubmit}>
 
     <div className="errors">
@@ -26,7 +26,7 @@ return (
           <div>{errors.terms}</div>
     </div>
 
-
+<div>
 <label> Name:
 <input 
     name='username'
@@ -36,7 +36,8 @@ return (
     placeholder='Name here'
 />
 </label>
-
+</div>
+<div>
 <label> Email:
 <input 
     name='email'
@@ -46,7 +47,8 @@ return (
     placeholder='Email address here'
 />
 </label>
-
+</div>
+<div>
 <label> Password:
 <input 
     name='password'
@@ -56,7 +58,8 @@ return (
     placeholder='Password here'
 />
 </label>
-
+</div>
+<div>
 <label> Terms of Service:
 <input 
     name='terms'
@@ -65,10 +68,10 @@ return (
     onChange={onChange}
 />
 </label>
-
+</div>
 <button disabled={disabled}>Submit</button>
 
 </form>
-
+</div>
     )
 }
