@@ -29,7 +29,7 @@ return (
 
 <label> Name:
 <input 
-    name='name'
+    name='username'
     type='text'
     value={values.name}
     onChange={onChange}

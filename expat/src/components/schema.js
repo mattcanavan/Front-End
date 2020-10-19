@@ -1,7 +1,7 @@
 import * as yup from 'yup'
 
 export default yup.object().shape({
-name: yup
+username: yup
 .string()
 .required('A name is required.')
 .min(4, 'A name with at least 4 characters is required.'),

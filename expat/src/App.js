@@ -4,12 +4,12 @@ import axios from 'axios'
 import * as yup from 'yup'
 import schema from './components/schema'
 import UserList from './components/Userlist'
-import './App.css';
+import './styles/App.css';
 
 function App() {
 
 const initialFormValues ={
-name: '',
+username: '',
 email: '',
 password: '',
 terms: false,
@@ -18,7 +18,7 @@ terms: false,
 const initialDisabled = true;
 
 const initialFormErrors = {
-name: '',
+username: '',
 email: '',
 password: '',
 }
@@ -31,7 +31,7 @@ const [formErrors, setFormErrors] = useState(initialFormErrors)
 
 const formSubmit = () => {
   const newUser = {
-    name: formValues.name.trim(),
+    username: formValues.username.trim(),
     email: formValues.email.trim(),
     password: formValues.password.trim(),
     terms: true,
