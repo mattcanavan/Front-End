@@ -2,12 +2,12 @@ import React from 'react'
 
 export default function Form(props) {
 
-const { values, disabled, errors,  submit } = props;
+const { values, disabled, errors, change, submit } = props;
 
 const onChange = (evt) => {
-const { name, type, value,  } = evt.target;
-
-
+const { name, type, value, checked } = evt.target;
+const valueToUse = type === 'checkbox' ? checked : value;
+change(name, valueToUse);
 }
 
 const onSubmit = (evt) => {
@@ -57,6 +57,14 @@ return (
 />
 </label>
 
+<label> Terms of Service:
+<input 
+    name='terms'
+    type='checkbox'
+    checked={values.terms}
+    onChange={onChange}
+/>
+</label>
 
 <button disabled={disabled}>Submit</button>
 
