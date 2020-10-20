@@ -27,6 +27,9 @@ function App() {
      <Route exact path="/Signin">
        <Signin />
      </Route>
+     <Route path="/posts">
+         <StoryDashBoard ></StoryDashBoard>
+      </Route>
       
     </div>
   </Router>

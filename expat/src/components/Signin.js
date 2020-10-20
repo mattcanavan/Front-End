@@ -75,9 +75,11 @@ export default function Signup( props ) {
         axios.post('https://expatjournalbw1020.herokuapp.com/login', loginObj)
             .then((res) => {
                 // debugger
-                localStorage.setItem('token', res.data.payload)
+                localStorage.setItem('token', res.data.token)
+                localStorage.setItem('username', formValues.username)
             push('/posts')//useHistory
-            console.log(setUserName)
+            console.log(formValues.username)
+            console.log(res)
             // setUserName(credentials.username);
             setCredentials(initialFormValues);
             // getPosts();
