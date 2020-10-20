@@ -81,4 +81,9 @@ git commit -m "meaningful comment."
 git status #double check you staged changes
 git push -u origin main
 ```
+* I'm on the development branch. How do I know which branches haven't been merged into it?
 
+```bash
+#to show remote branches that have not merged with <current-checkout-branch>
+git branch -r --no-merged development
+```
