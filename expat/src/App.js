@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Signin from './components/Signin'
-// import Login from '.components/Login'
+import Signup from './components/Signup'
 import axios from 'axios'
 import * as yup from 'yup'
 import schema from './components/schema'
@@ -98,7 +98,7 @@ useEffect(() => {
         {/* <PrivateRoute path="/posts" component={StoryDashBoard}/> */}
         {/* <Route exact path="/login" component={Login} /> */}
       
-      <Form 
+      <Signup
       values={formValues} 
       disabled={disabled} 
       errors={formErrors} 

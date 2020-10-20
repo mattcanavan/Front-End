@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Form(props) {
+export default function Signin(props) {
 
 const { values, disabled, errors, change, submit } = props;
 

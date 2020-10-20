@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Form(props) {
+export default function Signup(props) {
 
 const { values, disabled, errors, change, submit } = props;
 
@@ -28,6 +28,7 @@ return (
     </div>
 
 <div>
+    <h3>Sign Up</h3>
 <label> username:
 <input 
     name='username'
