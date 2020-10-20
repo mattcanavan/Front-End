@@ -2,8 +2,9 @@ import React, {useState, useEffect} from 'react';
 import * as yup from 'yup';
 import schema from '../testing/signInSchema';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom'
 
-export default function Signup() {
+export default function Signup( props ) {
 
     //INITIAL VALUES
     const initialFormValues = {
@@ -19,10 +20,13 @@ export default function Signup() {
     }
 
     //STATE
-    const [users, setUser] = useState([])
-    const [formValues, setFormValues] = useState(initialFormValues)
-    const [disabled, setDisabled] = useState(initialDisabled)
-    const [formErrors, setFormErrors] = useState(initialFormErrors)
+    const [userName, setUserName] = useState(initialFormValues);
+    const [credentials, setCredentials] = useState(initialFormValues)
+    const [formValues, setFormValues] = useState(initialFormValues);
+    const [disabled, setDisabled] = useState(initialDisabled);
+    const [formErrors, setFormErrors] = useState(initialFormErrors);
+    const {push} = useHistory();
+    
 
     //SIDE EFFECTS
     useEffect(() => {
@@ -70,8 +74,15 @@ export default function Signup() {
         console.log(loginObj)
         axios.post('https://expatjournalbw1020.herokuapp.com/login', loginObj)
             .then((res) => {
-                console.log('here is res.data', res.data)
-                // setUser([res.data]) //matt: we dont need this
+                // debugger
+                localStorage.setItem('token', res.data.token)
+                localStorage.setItem('username', formValues.username)
+            push('/posts')//useHistory
+            console.log(formValues.username)
+            console.log(res)
+            // setUserName(credentials.username);
+            setCredentials(initialFormValues);
+            // getPosts();
             })
             .catch(err => {
                 console.log('POST ERR -->', err)
