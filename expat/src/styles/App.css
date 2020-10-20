@@ -18,11 +18,19 @@
   justify-content: left;
   font-size: calc(10px + 2vmin);
   color: slategrey;
+  border: solid .25rem slategray;
+  margin-top: 15rem;
+  width: 50rem;
+  margin-left: 15rem;
 }
 
 .App-link {
   color: #61dafb;
 }
 
+.centerForm{
+  display: flex;
+  text-align: center;
+}
 
 
