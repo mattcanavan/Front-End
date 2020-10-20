@@ -1,73 +1,151 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react';
+import * as yup from 'yup';
+import schema from '../testing/signUpSchema';
+import axios from 'axios';
 
-export default function Signup(props) {
+export default function Signup() {
 
-const { values, disabled, errors, change, submit } = props;
+    //INITIAL VALUES
+    const initialFormValues = {
+        username: '',
+        email: '',
+        password: '',
+    }
 
-const onChange = (evt) => {
-const { name,  value,  } = evt.target;
+    const initialDisabled = true;
 
-change(name, value);
-}
+    const initialFormErrors = {
+        username: '',
+        email: '',
+        password: '',
+    }
 
-const onSubmit = (evt) => {
-    evt.preventDefault()
-    submit()
-}
+    //STATE
+    const [users, setUser] = useState([])
+    const [formValues, setFormValues] = useState(initialFormValues)
+    const [disabled, setDisabled] = useState(initialDisabled)
+    const [formErrors, setFormErrors] = useState(initialFormErrors)
 
-return (
-<div className='centerForm'>
-<div id='maxform'>
-<form onSubmit={onSubmit}>
+    //SIDE EFFECTS
+    useEffect(() => {
+        schema.isValid(formValues)
+          .then((valid) => {
+              setDisabled(!valid)
+          })
+      }, [formValues])
 
-    <div className="errors">
-          <div>{errors.name}</div>
-          <div>{errors.email}</div>
-          <div>{errors.password}</div>
-         
-    </div>
+    //HELPER FUNCTIONS
+    const onChange = (evt) => {
+        const { name, value, } = evt.target;
 
-<div>
-    <h3>Sign Up</h3>
-<label> username:
-<input 
-    name='username'
-    type='text'
-    value={values.name}
-    onChange={onChange}
-    placeholder='Name here'
-/>
-</label>
-</div>
-<div>
-<label> Email:
-<input 
-    name='email'
-    type='email'
-    value={values.email}
-    onChange={onChange}
-    placeholder='Email address here'
-/>
-</label>
-</div>
-<div>
-<label> Password:
-<input 
-    name='password'
-    type='password'
-    value={values.password}
-    onChange={onChange}
-    placeholder='Password here'
-/>
-</label>
-</div>
+        inputChange(name, value);
+    }
+
+    const inputChange = (name, value) => {
+        yup
+            .reach(schema, name)
+            .validate(value)
+            .then(() => {
+                setFormErrors({
+                    ...formErrors,
+                    [name]: '',
+                })
+            })
+            .catch(err => {
+                setFormErrors({
+                    ...formErrors,
+                    [name]: err.errors[0],
+                })
+            })
+        setFormValues({
+            ...formValues,
+            [name]: value,
+        })
+    }
+
+    const onSubmit = (evt) => {
+        evt.preventDefault()
+        formSubmit()
+    }
+
+    const formSubmit = () => {
+        const newUser = {
+
+            username: formValues.username.trim(),
+            email: formValues.email.trim(),
+            password: formValues.password.trim(),
+
+        }
+        postNewUser(newUser)
+    }
+
+    const postNewUser = (newUser) => {
+        console.log(newUser)
+        axios.post('https://expatjournalbw1020.herokuapp.com/signup', newUser)
+            .then((res) => {
+                console.log('here is res.data', res.data)
+                // setUser([res.data]) //matt: we dont need this
+            })
+            .catch(err => {
+                console.log('POST ERR -->', err)
+            })
+            .finally(() => {
+                setFormValues(initialFormValues)
+            })
+    }
 
 
+    return (
+        <div className='centerForm'>
+            <div id='maxform'>
+                <form onSubmit={onSubmit}>
 
-<button disabled={disabled}>Submit</button>
+                    <div className="errors">
+                        <div>{formErrors.username}</div>
+                        <div>{formErrors.email}</div>
+                        <div>{formErrors.password}</div>
 
-</form>
-</div>
-</div>
+                    </div>
+
+                    <div>
+                        <h3>Sign Up</h3>
+                        <label> username:
+                            <input
+                                name='username'
+                                type='text'
+                                value={formValues.username}
+                                onChange={onChange}
+                                placeholder='Name here'
+                            />
+                        </label>
+                    </div>
+                    <div>
+                        <label> Email:
+                            <input
+                                name='email'
+                                type='email'
+                                value={formValues.email}
+                                onChange={onChange}
+                                placeholder='Email address here'
+                            />
+                        </label>
+                    </div>
+                    <div>
+                        <label> Password:
+                            <input
+                                name='password'
+                                type='password'
+                                value={formValues.password}
+                                onChange={onChange}
+                                placeholder='Password here'
+                            />
+                        </label>
+                    </div>
+
+                    <button disabled={disabled}>Submit</button>
+
+                </form>
+            </div>
+        </div>
     )
 }
