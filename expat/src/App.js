@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Form from './components/Form'
+import Signin from './components/Signin'
 // import Login from '.components/Login'
 import axios from 'axios'
 import * as yup from 'yup'
@@ -8,7 +8,7 @@ import UserList from './components/Userlist'
 import './styles/App.css';
 import PrivateRoute from './utils/PrivateRoute';
 import StoryDashBoard from './components/StoryDashBoard';
-import { Route, Switch } from "react-router-dom";
+// import { Route, Switch } from "react-router-dom";
 
 function App() {
 
@@ -35,19 +35,21 @@ const [formErrors, setFormErrors] = useState(initialFormErrors)
 
 const formSubmit = () => {
   const newUser = {
+   
     username: formValues.username.trim(),
     email: formValues.email.trim(),
     password: formValues.password.trim(),
-    terms: true,
+   
   }
 
   postNewUser(newUser)
 }
 
 const postNewUser = (newUser) => {
-  axios.post('https://reqres.in/api/users', newUser)
+  console.log(newUser)
+  axios.post('https://expatjournalbw1020.herokuapp.com/signup', newUser)
     .then((res) => {
-      setUser([res.data, ...users])
+      setUser([res.data, ...newUser])
       })
     .catch(err => {
       console.log('POST ERR -->', err)
