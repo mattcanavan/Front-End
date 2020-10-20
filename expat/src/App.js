@@ -5,13 +5,13 @@ import Signup from './components/Signup';
 import './styles/App.css';
 import PrivateRoute from './utils/PrivateRoute';
 import StoryDashBoard from './components/StoryDashBoard';
-// import { Route, Switch } from "react-router-dom";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import Header from './components/Header'
 
 function App() {
 
 
-  return (
+  return (<Router>
     <div className="App">
       <header className="App-header"></header>
       <Header />
@@ -21,10 +21,16 @@ function App() {
       </Switch> */}
         
       
-      {/* <Signup /> */}
-      <Signup />
-      <Signin />
+      <Route path="/Signup">
+         <Signup ></Signup>
+      </Route>
+     <Route exact path="/Signin">
+       <Signin />
+     </Route>
+      
     </div>
+  </Router>
+    
   );
 }
 
