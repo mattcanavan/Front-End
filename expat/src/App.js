@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Form from './components/Form'
+import Signin from './components/Signin'
 // import Login from '.components/Login'
 import axios from 'axios'
 import * as yup from 'yup'
@@ -89,7 +89,7 @@ useEffect(() => {
   return (
     <div className="App">
       <header className="App-header"></header>
-      <Form 
+      <Signin 
       values={formValues} 
       disabled={disabled} 
       errors={formErrors} 
