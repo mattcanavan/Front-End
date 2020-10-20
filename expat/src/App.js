@@ -28,7 +28,7 @@ function App() {
        <Signin />
      </Route>
      <Route path="/posts">
-         <StoryDashBoard ></StoryDashBoard>
+         <StoryDashBoard />
       </Route>
       
     </div>

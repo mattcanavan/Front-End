@@ -11,6 +11,7 @@ const initialStory = {
 export default function StoryForm({posts, updatePosts, updating, setUpdating, username}) {
     const [storyToUpdate, setStoryToUpdate] = useState(initialStory);
     const [formValues, setFormValues] = useState(initialStory)
+    // const [story, addStory] =useState(initialStory)
 
     const editStory = story => {
         setUpdating(true);
@@ -50,7 +51,7 @@ export default function StoryForm({posts, updatePosts, updating, setUpdating, us
 
     const deleteStory = post => {
         axiosWithAuth()
-        .delete(`api/stories/${storyToUpdate.id}`, storyToUpdate)
+        .delete(`/api/posts/${storyToUpdate.id}`, storyToUpdate)
         .then(res => {
             updatePosts(posts.filter(item=> item.id !== post.id))
             setUpdating(false)
@@ -82,7 +83,7 @@ export default function StoryForm({posts, updatePosts, updating, setUpdating, us
                         setStoryToUpdate({...storyToUpdate,
                             name: e.target.value })
                         }
-                        value={storyToUpdate.name}/>
+                        value={storyToUpdate.title}/>
                     </label>
                     <label>
                         Story:
@@ -91,7 +92,7 @@ export default function StoryForm({posts, updatePosts, updating, setUpdating, us
                         setStoryToUpdate({...storyToUpdate,
                             story: e.target.value })
                         }
-                        value={storyToUpdate.story}/>
+                        value={storyToUpdate.description}/>
                     </label>
                     <label>
                         Image:
@@ -100,7 +101,7 @@ export default function StoryForm({posts, updatePosts, updating, setUpdating, us
                         setStoryToUpdate({...storyToUpdate,
                             image: e.target.value })
                         }
-                        value={storyToUpdate.image}/>
+                        value={storyToUpdate.imageURL}/>
                     </label>
                     <div>
                         <button type="submit">Update</button>
@@ -108,6 +109,42 @@ export default function StoryForm({posts, updatePosts, updating, setUpdating, us
                     </div>
                 </form>
             )}
+            <div className="add story">
+            <form onSubmit={saveUpdate}>
+                    <legend>Add Story</legend>
+                    <label>
+                        Name:
+                        <input
+                        onChange={e => 
+                        setStoryToUpdate({...formValues,
+                            name: e.target.value })
+                        }
+                        value={formValues.title}/>
+                    </label>
+                    <label>
+                        Story:
+                        <input
+                        onChange={e => 
+                        setFormValues({...formValues,
+                            story: e.target.value })
+                        }
+                        value={formValues.description}/>
+                    </label>
+                    <label>
+                        Image:
+                        <input
+                        onChange={e => 
+                        setFormValues({...formValues,
+                            image: e.target.value })
+                        }
+                        value={formValues.imageURL}/>
+                    </label>
+                    <div>
+                        <button type="submit">Add Story</button>
+                        <button onClick={() => setUpdating(false)}>Cancel</button>
+                    </div>
+                </form>
+            </div>
         </div>
     )
 }
