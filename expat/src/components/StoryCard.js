@@ -19,6 +19,7 @@ export default function StoryCard({story}) {
         <div className="card">
             <h2>This is {title}'s story!</h2>
             <h3>{description}</h3>
+            <img src={imageURL} alt=" adventure photo "></img>
             
 
         </div>
