@@ -16,17 +16,28 @@ const onSubmit = (evt) => {
 }
 
 return (
+<div className='centerForm'>
 <div id='maxform'>
 <form onSubmit={onSubmit}>
 
     <div className="errors">
-          
+          <div>{errors.name}</div>
           <div>{errors.email}</div>
           <div>{errors.password}</div>
-          
+          <div>{errors.terms}</div>
     </div>
 
-
+<div>
+<label> Name:
+<input 
+    name='username'
+    type='text'
+    value={values.name}
+    onChange={onChange}
+    placeholder='Name here'
+/>
+</label>
+</div>
 <div>
 <label> Email:
 <input 
@@ -49,10 +60,20 @@ return (
 />
 </label>
 </div>
-
+<div>
+<label> Terms of Service:
+<input 
+    name='terms'
+    type='checkbox'
+    checked={values.terms}
+    onChange={onChange}
+/>
+</label>
+</div>
 <button disabled={disabled}>Submit</button>
 
 </form>
+</div>
 </div>
     )
 }
