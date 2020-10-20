@@ -6,6 +6,7 @@ import './styles/App.css';
 import PrivateRoute from './utils/PrivateRoute';
 import StoryDashBoard from './components/StoryDashBoard';
 // import { Route, Switch } from "react-router-dom";
+import Header from './components/Header'
 
 function App() {
 
@@ -13,9 +14,12 @@ function App() {
   return (
     <div className="App">
       <header className="App-header"></header>
-      
-        {/* <PrivateRoute path="/posts" component={StoryDashBoard}/> */}
-        {/* <Route exact path="/login" component={Login} /> */}
+      <Header />
+      {/* <Switch>
+        <PrivateRoute path="/posts" component={StoryDashBoard}/>
+        <Route exact path="/Signin" component={Signin} />
+      </Switch> */}
+        
       
       {/* <Signup /> */}
       <Signup />
