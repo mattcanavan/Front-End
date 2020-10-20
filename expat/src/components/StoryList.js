@@ -2,10 +2,10 @@ import React from 'react';
 
 import StoryCard from './StoryCard'
 
-export default function StoryList({stories}) {
+export default function StoryList({posts}) {
     return(
         <div className="card-container">
-            {stories.map(story => (
+            {posts.map(story => (
                 <StoryCard key={story.id} story={story}/>
             ))}
         </div>

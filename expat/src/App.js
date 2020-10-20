@@ -5,6 +5,9 @@ import * as yup from 'yup'
 import schema from './components/schema'
 import UserList from './components/Userlist'
 import './styles/App.css';
+import PrivateRoute from './utils/PrivateRoute';
+import StoryDashBoard from './components/StoryDashBoard';
+import { Route, Switch } from "react-router-dom";
 
 function App() {
 
@@ -88,6 +91,10 @@ useEffect(() => {
   return (
     <div className="App">
       <header className="App-header"></header>
+      
+        {/* <PrivateRoute path="/posts" component={StoryDashBoard}/> */}
+        {/* <Route exact path="/login" component={Login} /> */}
+      
       <Form 
       values={formValues} 
       disabled={disabled} 
