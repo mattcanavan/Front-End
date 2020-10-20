@@ -8,8 +8,8 @@ export default function StoryCard({story}) {
         axiosWithAuth()
         .get(`api/posts`)
         .then(res => {
-            console.log(res)
-            const adventures = res.data 
+            console.log('posts', res)
+            const adventures = res.data
         })
         .catch(err => console.log('Post error', err))
     }
