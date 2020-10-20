@@ -5,9 +5,9 @@ export default function Form(props) {
 const { values, disabled, errors, change, submit } = props;
 
 const onChange = (evt) => {
-const { name, type, value, checked } = evt.target;
-const valueToUse = type === 'checkbox' ? checked : value;
-change(name, valueToUse);
+const { name,  value,  } = evt.target;
+
+change(name, value);
 }
 
 const onSubmit = (evt) => {
@@ -24,11 +24,11 @@ return (
           <div>{errors.name}</div>
           <div>{errors.email}</div>
           <div>{errors.password}</div>
-          <div>{errors.terms}</div>
+         
     </div>
 
 <div>
-<label> Name:
+<label> username:
 <input 
     name='username'
     type='text'
@@ -60,16 +60,9 @@ return (
 />
 </label>
 </div>
-<div>
-<label> Terms of Service:
-<input 
-    name='terms'
-    type='checkbox'
-    checked={values.terms}
-    onChange={onChange}
-/>
-</label>
-</div>
+
+
+
 <button disabled={disabled}>Submit</button>
 
 </form>

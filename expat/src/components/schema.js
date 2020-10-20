@@ -11,6 +11,5 @@ email: yup
 password: yup
 .string()
 .required('A password is required.'),
-terms: yup
-.boolean(),
+
 });
