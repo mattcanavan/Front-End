@@ -11,10 +11,17 @@ const initialStory = {
 export default function StoryForm({posts, updatePosts, updating, setUpdating, username}) {
     const [storyToUpdate, setStoryToUpdate] = useState(initialStory);
     const [formValues, setFormValues] = useState(initialStory)
+    // const [story, addStory] =useState(initialStory)
 
     const editStory = story => {
         setUpdating(true);
         setStoryToUpdate(story);
+    }
+
+    const onChange = e => {
+        e.persist();
+        // validateChange(e);
+        setFormValues({...formValues, [e.target.name]: e.target.name})
     }
 
     const addStory = e => {
@@ -41,7 +48,11 @@ export default function StoryForm({posts, updatePosts, updating, setUpdating, us
     const saveUpdate = e => {
         e.preventDefault();
         axiosWithAuth()
-        .put(`api/posts/${storyToUpdate.id}`, storyToUpdate)
+        .put(`api/posts/${storyToUpdate.id}`,
+        {title: formValues.title,
+            description: formValues.description,
+            imageURL: formValues.imageURL,
+            username: username} )
         .then(res =>{
             setUpdating(false)
         })
@@ -50,7 +61,7 @@ export default function StoryForm({posts, updatePosts, updating, setUpdating, us
 
     const deleteStory = post => {
         axiosWithAuth()
-        .delete(`api/stories/${storyToUpdate.id}`, storyToUpdate)
+        .delete(`/api/posts/${storyToUpdate.id}`, storyToUpdate)
         .then(res => {
             updatePosts(posts.filter(item=> item.id !== post.id))
             setUpdating(false)
@@ -62,12 +73,12 @@ export default function StoryForm({posts, updatePosts, updating, setUpdating, us
         <div className="stories-list">
             <ul className="organized">
                 {posts.map(story =>(
-                    <li key={story.name} onClick={() => editStory(story)} className="edit-stories">
+                    <li key={story.title} onClick={() => editStory(story)} className="edit-stories">
                         <span>
                             <span onClick={e => {
                                 e.stopPropagation();
                                 deleteStory(story)
-                            }}>X</span>{""}{story.name}
+                            }}>X</span>{""}{story.title}
                         </span>
                     </li>
                 ))}
@@ -78,29 +89,23 @@ export default function StoryForm({posts, updatePosts, updating, setUpdating, us
                     <label>
                         Name:
                         <input
-                        onChange={e => 
-                        setStoryToUpdate({...storyToUpdate,
-                            name: e.target.value })
+                        onChange={onChange
                         }
-                        value={storyToUpdate.name}/>
+                        value={storyToUpdate.title}/>
                     </label>
                     <label>
                         Story:
                         <input
-                        onChange={e => 
-                        setStoryToUpdate({...storyToUpdate,
-                            story: e.target.value })
+                        onChange={onChange
                         }
-                        value={storyToUpdate.story}/>
+                        value={storyToUpdate.description}/>
                     </label>
                     <label>
                         Image:
                         <input
-                        onChange={e => 
-                        setStoryToUpdate({...storyToUpdate,
-                            image: e.target.value })
+                        onChange={onChange
                         }
-                        value={storyToUpdate.image}/>
+                        value={storyToUpdate.imageURL}/>
                     </label>
                     <div>
                         <button type="submit">Update</button>
@@ -108,6 +113,38 @@ export default function StoryForm({posts, updatePosts, updating, setUpdating, us
                     </div>
                 </form>
             )}
+            <div className="add story">
+            <form onSubmit={saveUpdate}>
+                    <legend>Add Story</legend>
+                    <label>
+                        Name:
+                        <input
+                        name="title"
+                        type="text"
+                        onChange={onChange
+                        }
+                        value={formValues.title}/>
+                    </label>
+                    <label>
+                        Story:
+                        <input
+                        onChange={onChange
+                        }
+                        value={formValues.description}/>
+                    </label>
+                    <label>
+                        Image:
+                        <input
+                        onChange={onChange}
+                        
+                        value={formValues.imageURL}/>
+                    </label>
+                    <div>
+                        <button type="submit">Add Story</button>
+                        <button onClick={() => setUpdating(false)}>Cancel</button>
+                    </div>
+                </form>
+            </div>
         </div>
     )
 }
