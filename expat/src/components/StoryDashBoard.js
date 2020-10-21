@@ -1,34 +1,59 @@
 import React, { useState, useEffect} from 'react';
 import {axiosWithAuth} from '../utils/axiosWithAuth';
+import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 export default function StoryDashBoard(props) {
-    const [posts, setPosts] = useState([]);
-    const [update, setUpdate] = useState(false)
+    
+    const { push } = useHistory();
 
+    //STATE
+    const [comments, setComments] = useState([]);
+    const [posts, setPosts] = useState([]);
+    const [update, setUpdate] = useState(false);
+
+    //GET posts
     useEffect(() =>{
         axiosWithAuth()
         .get('/api/posts')
         .then(res => {
-            console.log(res.data)
             setPosts(res.data)
         })
-        .catch(err => console.log("error DashBoard", err))
-    }, [])
+        .catch(err => console.log("GET error", err))
+    }, [update])
 
-    const deleteHandler = () => {
+    //GET comments
+    useEffect(() =>{
         axiosWithAuth()
-          .delete(``)
+        .get('/api/posts/comments')
+        .then(res => {
+            setComments(res.data)
+        })
+        .catch(err => console.log("GET error", err))
+    }, [posts])
+
+    //DELETE post
+    const deleteHandler = (postId) => {
+        axiosWithAuth()
+          .delete(`api/posts/${postId}`)
           .then((res) => {
-            debugger
+            setUpdate(!update) //changes update state so above side-effect renders.
           })
           .catch((err) => {
-            console.log(err);
+            console.log('delete error:', err);
           });
       };
 
+    //EDIT post
     const editHandler = (postId) => {
-        console.log(postId)
+        push(`/posts/edit/${postId}`)
     }
+
+    //ADD comment
+    const commentHandler = (postId) => {
+        push(`/posts/comment/${postId}`)
+    }
+
 
     return (
         <div className='parent'>
@@ -43,9 +68,23 @@ export default function StoryDashBoard(props) {
                     <h3>{singlePost.title}</h3>
                     <h5>{singlePost.description}</h5>
                 </div>
+
                 
-                <button onClick={() => deleteHandler()}>Delete</button>
+                <button onClick={() => deleteHandler(singlePost.postId)}>Delete</button>
                 <button onClick={() => editHandler(singlePost.postId)}>Edit</button>
+                <button onClick={() => commentHandler(singlePost.postId)}>Add Comment</button>
+
+
+
+                <div>----------------------------------</div>
+                <div className='commentSection'> Comment Section
+                    {comments.map( singleComment => {
+                        if(singleComment.postId === singlePost.postId){
+                            return (
+                            <h5 key={singleComment.commentId}>~{singleComment.comment}</h5>)
+                        }
+                    })}
+                </div>
                 </div>
             )
             )}
