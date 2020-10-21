@@ -22,7 +22,7 @@
   margin-left: 25%;
 }
 
-.App-link {
+/* .App-link {
   color: #61dafb;
 }
 
@@ -147,4 +147,36 @@ img {
   height: 16rem;
   margin: 1rem;
   border-radius: 0.8rem;
+} */
+
+/* matt */
+
+*{
+  align-content: center;
 }
+
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 20px;
+  border: 2px black solid;
+  height: 400px;
+  width: 300px;
+  margin: 20px;
+}
+
+.container img {
+  height: 100px;
+}
+
+.container h3{
+  text-decoration: underline;
+}
+
+
