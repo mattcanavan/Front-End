@@ -28,12 +28,12 @@ function App() {
      <Route exact path="/Signin">
        <Signin />
      </Route>
-     <Route path="/posts">
+     <Route exact path="/posts">
          <StoryDashBoard />
       </Route>
 
       <Route
-        path="/posts/edit/:id"
+        exact path="/posts/edit/:id"
         component= {EditStory}
         />
       

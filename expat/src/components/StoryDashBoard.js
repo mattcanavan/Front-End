@@ -1,9 +1,12 @@
 import React, { useState, useEffect} from 'react';
 import {axiosWithAuth} from '../utils/axiosWithAuth';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 export default function StoryDashBoard(props) {
     
+    const { push } = useHistory();
+
     //STATE
     const [comments, setComments] = useState([]);
     const [posts, setPosts] = useState([]);
@@ -42,8 +45,9 @@ export default function StoryDashBoard(props) {
           });
       };
 
+    //EDIT post
     const editHandler = (postId) => {
-        console.log(postId)
+        push(`/posts/edit/${postId}`)
     }
 
 
