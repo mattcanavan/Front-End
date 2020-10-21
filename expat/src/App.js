@@ -7,6 +7,7 @@ import PrivateRoute from './utils/PrivateRoute';
 import StoryDashBoard from './components/StoryDashBoard';
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import Header from './components/Header'
+import EditStory from './components/EditStory';
 
 function App() {
 
@@ -30,6 +31,11 @@ function App() {
      <Route path="/posts">
          <StoryDashBoard />
       </Route>
+
+      <Route
+        path="/posts/edit/:id"
+        component= {EditStory}
+        />
       
     </div>
   </Router>
