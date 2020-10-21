@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
@@ -13,11 +14,17 @@ code {
 }
 
 body{
+  
+  background: url('/images/max3.png');
+  /* background-size: vh1000 */
   background: antiquewhite;
   color: slategray
 }
 
+
+
 #maxform{
   display: flex;
   flex-direction: column;
+  background-image: url("/images/max3.png");
   }

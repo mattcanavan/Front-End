@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -9,6 +10,7 @@
 }
 
 #maxform {
+  
   background-color: antiquewhite;
   display: flex;
   flex-direction: column;
@@ -21,6 +23,51 @@
   width: 30rem;
   margin-left: 25%;
 }
+
+.header{
+  display: flex;
+  text-align: center;
+  background-image: url('/images/max3.png');
+  background-color: #6BCAE2;
+  height: 5rem;
+  
+}
+
+/* .headTitle{
+  display:flex;
+  background-color: antiquewhite;
+  align-content: center;
+  margin:auto;
+} */
+
+nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.logo{
+  height: 5rem;
+}
+.nav-link{
+  display: flex;
+  align-content: center;
+}
+
+.button{
+background-color: antiquewhite;
+border-radius: 1rem;
+justify-content: space-around;
+margin: auto;
+margin-left: .5rem;
+padding: .5rem;
+
+box-shadow: .5rem;
+color: brown
+
+
+}
+
 
 /* .App-link {
   color: #61dafb;
