@@ -27,7 +27,6 @@ export default function StoryDashBoard(props) {
         axiosWithAuth()
         .get('/api/posts/comments')
         .then(res => {
-            console.log(res.data)
             setComments(res.data)
         })
         .catch(err => console.log("GET error", err))
@@ -50,6 +49,11 @@ export default function StoryDashBoard(props) {
         push(`/posts/edit/${postId}`)
     }
 
+    //ADD comment
+    const commentHandler = (postId) => {
+        push(`/posts/comment/${postId}`)
+    }
+
 
     return (
         <div className='parent'>
@@ -68,6 +72,9 @@ export default function StoryDashBoard(props) {
                 
                 <button onClick={() => deleteHandler(singlePost.postId)}>Delete</button>
                 <button onClick={() => editHandler(singlePost.postId)}>Edit</button>
+                <button onClick={() => commentHandler(singlePost.postId)}>Add Comment</button>
+
+
 
                 <div>----------------------------------</div>
                 <div className='commentSection'> Comment Section

@@ -16,6 +16,7 @@ export default function Header() {
                 <Link className="nav-link" to ="/Signup">Register</Link>
                 <Link className="nav-link" to ="/posts">stories</Link>
                 <Link className="nav-link" to ="/Signin" onClick={signOut}>Sign out</Link>
+                <Link className="nav-link" to ="/posts/add">ADD new post</Link>
             </nav>
         </div>
   

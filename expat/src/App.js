@@ -8,6 +8,8 @@ import StoryDashBoard from './components/StoryDashBoard';
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import Header from './components/Header'
 import EditStory from './components/EditStory';
+import AddStory from './components/AddStory';
+import AddComment from './components/AddComment';
 
 function App() {
 
@@ -36,7 +38,17 @@ function App() {
         exact path="/posts/edit/:id"
         component= {EditStory}
         />
+
+      <Route
+      exact path="/posts/add"
+      component= {AddStory}
+      />
       
+      <Route
+      exact path = "/posts/comment/:id"
+      component= {AddComment}
+      />
+
     </div>
   </Router>
     
