@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import {axiosWithAuth} from '../utils/axiosWithAuth';
 
-const initialFormValues = {
+const initialPostValues = {
     title: "",
     categoryId: "",
     description: "",
@@ -16,8 +16,8 @@ export default function EditStory() {
     const id = params.id;
 
     //STATE
-    const [formValues, setFormValues] = useState(initialFormValues);
-    const [post, setPost] = useState([]);;
+    // const [formValues, setFormValues] = useState(initialFormValues);
+    const [post, setPost] = useState(initialPostValues);;
 
     ///// HELPER FUNCTIONS
 
@@ -42,9 +42,9 @@ export default function EditStory() {
 		event.preventDefault();
 		axiosWithAuth()
 			.put(`/api/posts/${id}`, {
-				title: formValues.title,
-				description: formValues.description,
-				imageURL: formValues.imageURL,
+				title: post.title,
+				description: post.description,
+				imageURL: post.imageURL,
 			})
 			.then((response) => {
 				push(`/posts`);
@@ -93,8 +93,8 @@ export default function EditStory() {
 				<br />
 				
 				<br />
-				{formValues.imageURL !== null && formValues.imageURL !== "" ? (
-					<img alt={formValues.title} src={`${formValues.imageURL}`} />
+				{post.imageURL !== null && post.imageURL !== "" ? (
+					<img alt={post.title} src={`${post.imageURL}`} />
 				) : null}
 				<br />
 				<button type="submit" to="/posts">
