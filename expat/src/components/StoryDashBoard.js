@@ -81,7 +81,10 @@ export default function StoryDashBoard(props) {
                     {comments.map( singleComment => {
                         if(singleComment.postId === singlePost.postId){
                             return (
-                            <h5 key={singleComment.commentId}>~{singleComment.comment}</h5>)
+                            <div className="commentsContainer" key={singleComment.commentId}>
+                                {singleComment.username}
+                                {singleComment.comment}
+                            </div>)
                         }
                     })}
                 </div>

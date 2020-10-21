@@ -20,9 +20,13 @@ export default function AddComment() {
 
     //submitForm handler
     const commentHandler = (event) => {
-		event.preventDefault();
+        event.preventDefault();
+        let username = localStorage.getItem('username');
 		axiosWithAuth()
-			.post(`/api/posts/${id}/comments`, { comment: formValues.comment })
+			.post(`/api/posts/${id}/comments`, { 
+                comment: formValues.comment,
+                username: username,
+             })
 			.then((response) => {
 				push("/posts")
 			})
