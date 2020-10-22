@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -9,6 +10,7 @@
 }
 
 #maxform {
+  
   background-color: antiquewhite;
   display: flex;
   flex-direction: column;
@@ -20,136 +22,97 @@
   margin-top: 15rem;
   width: 30rem;
   margin-left: 25%;
+  /* background-image: url('../components/images/max3.png'); */
+  border-radius: 2rem;
 }
 
-/* .App-link {
-  color: #61dafb;
-}
-
-.centerForm {
+.header{
   display: flex;
   text-align: center;
+  flex-direction: row;
+  /* background-color: #6BCAE2; */
+  height: 5rem;
+  background-image: linear-gradient(to bottom, #6BCAE2, #e3f7fc);
+  opacity: 80%;
+
+  
+  
+}
+.content {
+  min-height: calc(100vh - 70px);
 }
 
--------------- .App {
-  text-align: center;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.title {
-  margin: 1rem 0rem 1rem 3rem;
-  font-size: 3rem;
-  text-decoration: none;
-  color: rgba(0, 0, 0, 1);
-}
-
-.adventure {
-  font-style: italic;
-  font-weight: 300;
-  margin-top: 10rem;
-}
-
-.start {
-  text-decoration: none;
-  color: rgba(0, 0, 0, 1);
-  background-color: rgba(232, 232, 232, 1);
-  padding: 0.5rem 1rem;
-  border-radius: 0.8rem;
-  margin-left: 2.5rem;
-  font-size: 1rem;
-}
-
-.start:hover {
-  box-shadow: 0.2rem 0.2rem 1rem 0.2rem rgba(0, 0, 0, 0.5);
-}
-
-.input {
-  font-size: 1rem;
-  padding-left: 0.8rem;
-  margin-left: 2rem;
-  border-radius: 5%;
-}
-
-.nav-links {
-  display: flex;
-  width: 20%;
-  align-items: center;
-  justify-content: space-between;
-  margin-right: 3rem;
-}
-
-.nav-link {
-  text-decoration: none;
-  color: rgba(0, 0, 0, 1);
-  font-weight: bold;
-}
-
-.nav-link:hover {
-  color: rgb(63, 154, 182);
-  text-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 1);
-}
-
-.dash {
-  display: flex;
-  margin-top: 1rem;
-}
-
-.animals-list {
-  margin-left: 3rem;
-  margin-right: 3rem;
-  background-color: rgba(179, 90, 90);
-  box-shadow: 0.2rem 0.2rem 1rem 0.2rem rgba(0, 0, 0, 0.5);
-  width: 16rem;
-  border-radius: 0.8rem;
-}
-
-ul {
-  padding-inline-start: 0px;
-}
-
-.organized {
-  display: flex;
-  flex-direction: column;
-}
-
-.edit-animals {
-  list-style-type: none;
-  padding: 0.8rem 0rem 0.8rem 0.8rem;
-  font-size: 1.2rem;
-  width: 100%;
-  display: flex;
-  align-items: start;
-}
-
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
-  padding-left: 1rem;
-  width: 100%;
-  justify-content: end;
-}
-
-.card {
-  background-color: rgb(179, 90, 90);
-  box-shadow: 0.2rem 0.2rem 1rem 0.2rem rgba(0, 0, 0, 0.5);
-  width: 10rem;
-  height: 14rem;
-  margin: 5rem;
-  border-radius: 0.8rem;
-}
-
-img {
-  width: 12rem;
-  height: 16rem;
-  margin: 1rem;
-  border-radius: 0.8rem;
+/* .headTitle{
+  display:flex;
+  background-color: antiquewhite;
+  align-content: center;
+  margin:auto;
 } */
 
-/* matt */
+nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-image: linear-gradient(to bottom, #6BCAE2, #e3f7fc);
+  
+}
+
+
+.logo{
+  height: 6rem;
+  border-radius: 5rem;
+  margin-top: .5rem;
+  border: solid .25rem #6BCBE2;
+}
+
+.logo2{
+  height: 6rem;
+  border-radius: 5rem;
+  margin-bottom: .5rem;
+  border: solid .25rem #6BCBE2;
+}
+.nav-link{
+  display: flex;
+  align-content: center;
+  color: saddlebrown;
+  
+
+  
+}
+
+
+
+.button{
+background-color: antiquewhite;
+border-radius: 1rem;
+justify-content: space-around;
+margin: auto;
+margin-left: .5rem;
+padding: .5rem;
+color: brown
+
+
+}
+.button:link{
+  background-color: almond;
+  box-shadow: 2px 5px #6BCAE2;
+}
+
+.button:visited{
+  background-color: skyblue;
+  
+}
+
+.button:hover{
+  color:antiquewhite;
+  background-color: paleturquoise;
+  box-shadow: 2px 5px 3px antiquewhite;
+  
+}
+
+
+
+
 
 *{
   align-content: center;
@@ -179,12 +142,20 @@ img {
   text-decoration: underline;
 }
 
-.nav-link {
-  padding: 0 10px 10px 0;
-}
 
 .userName h4{
   font-style: italic;
 }
 
+
+.footer{
+  
+  background-color: #6BCBE2;
+    height: 7rem;
+    position: relative;
+  right: 0;bottom:0;left:0;
+    width: 100%;
+    margin-top: 30rem;
+   opacity:75%;
+}
 
