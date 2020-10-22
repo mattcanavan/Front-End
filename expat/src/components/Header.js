@@ -27,7 +27,7 @@ export default function Header() {
                 <Link className="nav-link" to ="/Signup">Register</Link>
                 </div>
                 <div className='button'>
-                <Link className="nav-link" to ="/posts">stories</Link>
+                <Link className="nav-link" to ="/posts">Stories</Link>
                 </div>
                 <div className='button'>
                 <Link className="nav-link" to ="/Signin" onClick={signOut}>Sign out</Link>
