@@ -39,26 +39,32 @@ body{
     position: absolute;
     bottom: -1;
     width: 100%;
+   
   }
 
   a{
     text-decoration: none;
   }
 
-  .nav-link:hover{
-    color: #3ADE32;
-    text-decoration: none;
-    
-    }
-   /* .nav-link:visited{ 
-    color: #3ADE32;
-    text-decoration: none;
-  }  
+ /* unvisited link */
+a:link {
+  color: darkgoldenrod ;
+}
 
-  .nav-link:active{
-   color: #139df9;
-   text-decoration: none;
-  }  */
+/* visited link */
+a:visited {
+  color: #2dbc25;
+}
+
+/* mouse over link */
+a:hover {
+  color: #3363dd;
+}
+
+/* selected link */
+a:active {
+  color: orange;
+}
   
   input[type=text] {
     border-radius: .33rem;
