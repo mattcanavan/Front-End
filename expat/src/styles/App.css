@@ -69,6 +69,15 @@
   padding: .5rem;
 }
 
+#logBut{
+  background-color: #e2716b;
+  border-radius: 1rem;
+}
+#signBut{
+  background-color: #e2716b;
+  border-radius: 1rem;
+}
+
 .nav-links{
   display: flex;
   justify-content: space-around;
@@ -108,6 +117,14 @@
 .button:hover {
   background-color: #e2ad6b;
   box-shadow: 2px 5px 3px antiquewhite;
+
+}
+
+.buttonPostClass{
+  background-color: #e2716b;
+  border-radius: 1rem;
+  width: 90px;
+  height: 45px;
 
 }
 
@@ -171,6 +188,10 @@
   font-weight: 500;
 }
 
+.content{
+  padding-left: 200px;
+}
+
 .footer {
   display: flex;
   justify-content: space-evenly;
@@ -200,5 +221,9 @@
   width: 40%;
   align-items: center;
   background-color: white;
+}
+
+.centerForm{
+  padding-left: 200px;
 }
 
