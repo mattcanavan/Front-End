@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Source+Sans+Pro&display=swap");
+
+* {
+  font-family: "Source Sans Pro", sans-serif;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -5,6 +12,19 @@
 /* *{
   border: 1px tomato solid;
 } */
+.header {
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  height: 8rem;
+  /* background-image: linear-gradient(to bottom, #6BCAE2, #e3f7fc); */
+  background-color: #6BCAE2;
+  opacity: 80%;
+
+  width: 100%;
+  padding-left: 20px;
+  font-size: 20px;
+}
 
 #maxform {
   background-color: white;
@@ -26,17 +46,7 @@
   min-height: 100%;
 }
 
-.header {
-  display: flex;
-  text-align: center;
-  flex-direction: row;
-  height: 8rem;
-  /* background-image: linear-gradient(to bottom, #6BCAE2, #e3f7fc); */
-  background-color: #6BCAE2;
-  opacity: 80%;
-  padding-left: 20px;
-  font-size: 20px;
-}
+
 
 .nav-link{
   margin-left: 20px;
@@ -57,10 +67,10 @@
 }
 
 .logo {
-  height: 6rem;
+  height: 5rem;
   border-radius: 5rem;
-  margin-top: .5rem;
-  border: solid .25rem white;
+  margin-top: 1rem;
+  /* border: solid .25rem white; */
 }
 
 .buttonContainer {
@@ -70,7 +80,8 @@
 }
 
 .button {
-  background-color: #e2716b;
+  background-color: white;
+  text-shadow: 1px 1px black;
   border-radius: 1rem;
   justify-content: space-around;
   margin: 20px;
@@ -83,11 +94,11 @@
 }
 
 .button:visited {
-  background-color: #e2716b;
+  background-color: #6BCAE2;
 }
 
 .button:hover {
-  background-color: #e2ad6b;
+  background-color: #6BCAE2;
   box-shadow: 2px 5px 3px antiquewhite;
 
 }
@@ -105,11 +116,14 @@
   flex-direction: column;
   align-content: center;
   padding: 20px;
+  border-radius: 1rem;
+  box-shadow: 1px 1px black;
   border: 2px black solid;
   min-height: 300px;
   width: 500px;
   margin: 20px;
-  background-color: ivory;
+  background-color: white;
+  opacity: 90%;
 }
 
 .cardContainer img {
@@ -157,11 +171,9 @@
   justify-content: center;
   align-items: center;
   background-color: #6BCBE2;
-  height: 2rem;
-  position: relative;
-  right: 0;
+  height: 3rem;
+  position: fixed;
   bottom: 0;
-  left: 0;
   width: 100%;
   opacity: 90%;
 }
@@ -171,8 +183,8 @@
 .homeContainer{
   display: flex;
   justify-content: center;
-  /* padding-top: 400px; */
-}
+  padding-top: 300px;
+ }
 
 .inner{
   display: flex;
