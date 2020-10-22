@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Source+Sans+Pro&display=swap");
+
+* {
+  font-family: "Source Sans Pro", sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #eeecec;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Nunito", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.logo-img {
+  height: 45px;
+}
+
+.App-container {
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+}
+
+.App-content {
+  padding-bottom: 250px;
+}
+@media (max-width: 450px) {
+  .App-content {
+    padding-bottom: 150px;
+  }
+  }
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 10vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.signup-header {
+  display: block;
+}
+
+.signup-form-contianer {
+  display: block;
+}
+
+.feed {
+  display: block;
+}
+
+input[type="text"]:focus, textarea[type="text"]:focus, button:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="tel"]:focus {
+  outline: none;
+}
+
+option:checked {
+  background-color: #3184ed;
+  color: white;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+button {
+  cursor: pointer;
+}

@@ -10,6 +10,7 @@ import Header from './components/Header'
 import EditStory from './components/EditStory';
 import AddStory from './components/AddStory';
 import AddComment from './components/AddComment';
+import mikehome from './styles/mikehome'
 
 function App() {
 
@@ -47,6 +48,10 @@ function App() {
       <Route
       exact path = "/posts/comment/:id"
       component= {AddComment}
+      />
+        <Route
+      exact path = "/mikehome"
+      component= {mikehome}
       />
 
     </div>
