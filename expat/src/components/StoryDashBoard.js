@@ -5,11 +5,12 @@ import { useHistory } from 'react-router-dom';
 
 export default function StoryDashBoard(props) {
     
+    
     const { push } = useHistory();
-
+    
     //STATE
     const [comments, setComments] = useState([]);
-    const [posts, setPosts] = useState([]);
+    const [posts, setPosts] = useState();
     const [update, setUpdate] = useState(false);
 
     //GET posts
@@ -17,6 +18,7 @@ export default function StoryDashBoard(props) {
         axiosWithAuth()
         .get('/api/posts')
         .then(res => {
+            console.log(res)
             setPosts(res.data)
         })
         .catch(err => console.log("GET error", err))
@@ -55,35 +57,38 @@ export default function StoryDashBoard(props) {
     }
 
 
+    if (!posts) {
+        return <h1>Loading from database...</h1>
+    }
+
     return (
-        <div className='parent'>
+        <div className='parentOfCardGrid'>
             {posts.map(singlePost => (
-                <div className='container' key={singlePost.postId}>
+                <div className='cardContainer' key={singlePost.postId}>
                 
                 <div className='thumbnail'>
                     <img src={singlePost.imageURL} alt='' />
                 </div>
 
-                <div className='preview'> 
-                    <h3>{singlePost.title}</h3>
-                    <h5>{singlePost.description}</h5>
+                <div className='cardText'> 
+                    <h1 className="title">{singlePost.title}</h1>
+                    {/* <h3>Story by: {singlePost.username}</h3> */}
+                    <h5 className="description">User Story: {singlePost.description}</h5>
                 </div>
 
-                
-                <button onClick={() => deleteHandler(singlePost.postId)}>Delete</button>
-                <button onClick={() => editHandler(singlePost.postId)}>Edit</button>
-                <button onClick={() => commentHandler(singlePost.postId)}>Add Comment</button>
+                <div className="buttonContainer">
+                <button className="button" onClick={() => commentHandler(singlePost.postId)}>Add Comment</button>
+                <button className="button" onClick={() => deleteHandler(singlePost.postId)}>Delete</button>
+                <button className="button" onClick={() => editHandler(singlePost.postId)}>Edit</button>
+                </div>
 
-
-
-                <div>----------------------------------</div>
                 <div className='commentSection'> Comment Section
                     {comments.map( singleComment => {
                         if(singleComment.postId === singlePost.postId){
                             return (
                             <div className="commentsContainer" key={singleComment.commentId}>
-                                {singleComment.username}
-                                {singleComment.comment}
+                                <h5 className="username">{singleComment.username}:</h5>
+                                <h5 className="comment">{singleComment.comment}</h5>
                             </div>)
                         }
                     })}

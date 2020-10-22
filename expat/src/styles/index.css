@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
@@ -14,10 +15,76 @@ code {
 
 body{
   background: antiquewhite;
-  color: slategray
+  color: black;
+  background-image: url("../components/images/max3.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-#maxform{
+#maxform {
   display: flex;
   flex-direction: column;
+  padding-bottom: .5rem;
+  margin-bottom: 5rem;
+}
+
+/* .maxFoot {
+  background-color: #4360f0;
+  height: 4rem;
+  position: absolute;
+  bottom: -1;
+  width: 100%;
+
+} */
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
+
+ /* unvisited link */
+ a:link {
+  color: darkgoldenrod ;
+  transition: 0.3s;
+  
+}
+
+/* visited link */
+a:visited {
+  color: white;
+  transition: 0.3s;
+}
+
+/* mouse over link */
+a:hover {
+  color: #3363dd;
+  transition: 0.3s;
+}
+
+/* selected link */
+a:active {
+  color: orange;
+  transition: 0.3s;
+}
+  
+  input[type=text] {
+    border-radius: .33rem;
+    border: solid .10rem grey;
+    padding: .25rem;
+  }
+  input[type=password] {
+    border-radius: .33rem;
+    border: solid .10rem grey;
+    padding: .25rem;
+  }
+  input[type=email] {
+    border-radius: .33rem;
+    border: solid .10rem grey;
+    padding: .25rem;
+  }
+  textarea[type=description] {
+    border-radius: .50rem;
+    border: solid .10rem grey;
+    padding: .25rem;
   }

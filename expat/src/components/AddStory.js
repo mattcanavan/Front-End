@@ -44,9 +44,12 @@ export default function AddStory() {
 		setFormValues({ ...formValues, [event.target.name]: event.target.value });
 	};
     return (
-        <div>
+		<div className='content'>
+        <div id="maxform">
             <form onSubmit={formSubmit}>
+				<div>
 				<h2>Add New Post</h2>
+				</div>
 				<label htmlFor="title">
 					{" "}
 					Title:&nbsp;
@@ -58,7 +61,7 @@ export default function AddStory() {
 						onChange={inputChange}
 					/>
 				</label>
-
+			<div>
 				<label htmlFor="description">
 					<textarea
 						type="text"
@@ -68,7 +71,7 @@ export default function AddStory() {
 						onChange={inputChange}
 					/>
 				</label>
-
+				</div>
 				<label htmlFor="imageURL">
 					{" "}
 					Image:&nbsp;
@@ -82,14 +85,18 @@ export default function AddStory() {
 				</label>
 
 				<br />
+				
 				{formValues.imageURL !== null && formValues.imageURL !== "" ? (
 					<img alt={formValues.title} src={`${formValues.imageURL}`} />
 				) : null}
 				<br />
-				<button type="submit" to="/posts">
+				
+				<button className='buttonPostClass' type="submit" to="/posts">
 					Post
 				</button>
+				
 			</form>
         </div>
+		</div>
     )
 }

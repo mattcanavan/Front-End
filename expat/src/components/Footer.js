@@ -9,31 +9,32 @@ export default function Header() {
 
     return (
 
-        <div className="header">
-           <div>
-           <img className='logo' src={logo} alt="Logo" />
-           </div>
+        <div className="footer">
             <br></br>
             <nav className="nav-links">
                 
-                <Link className="nav-link"to="/">Home</Link>
+                <Link className="nav-link button" to="/">Home</Link>
                 
                 
-                <Link className="nav-link" to ="/Signin">Login</Link>
+                <Link className="nav-link button" to ="/Signin">Login</Link>
                 
                 
-                <Link className="nav-link" to ="/Signup">Register</Link>
+                <Link className="nav-link button" to ="/Signup">Register</Link>
                 
                 
-                <Link className="nav-link" to ="/posts">Stories</Link>
+                <Link className="nav-link button" to ="/posts">Stories</Link>
                 
                 
-                <Link className="nav-link" to ="/Signin" onClick={signOut}>Sign out</Link>
+                <Link className="nav-link button" to ="/Signin" onClick={signOut}>Sign out</Link>
                 
                 
                 <Link className="nav-link addBtn" to ="/posts/add">Add New Story</Link>
                 
             </nav>
+            <div>
+            <img className='logo' src={logo} alt="Logo" />
+           </div>
+           <h5>copywrite 2020</h5>
         </div>
   
         

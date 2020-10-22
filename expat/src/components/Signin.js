@@ -106,7 +106,7 @@ export default function Signup( props ) {
 
                 <div>
                     <h3>Login</h3>
-                    <label> username:
+                    <label> Username:
                             <input
                             name='username'
                             type='text'
