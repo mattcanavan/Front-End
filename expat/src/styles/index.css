@@ -44,10 +44,11 @@ body{
 
   a{
     text-decoration: none;
+    font-weight: bold;
   }
 
 
-  
+
  /* unvisited link */
 a:link {
   color: darkgoldenrod ;
@@ -57,7 +58,7 @@ a:link {
 
 /* visited link */
 a:visited {
-  color: #2dbc25;
+  color: #24abc9;
   transition: 0.3s;
 }
 
