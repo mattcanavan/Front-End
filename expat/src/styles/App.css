@@ -27,14 +27,15 @@
   text-align: center;
   flex-direction: row;
   height: 8rem;
-  background-image: linear-gradient(to bottom, #6BCAE2, #e3f7fc);
+  /* background-image: linear-gradient(to bottom, #6BCAE2, #e3f7fc); */
+  background-color: #6BCAE2;
   opacity: 80%;
   padding-left: 20px;
 }
 
-.content {
+/* .content {
   min-height: calc(100vh - 70px);
-}
+} */
 
 /* .headTitle{
   display:flex;
@@ -43,32 +44,42 @@
   margin:auto;
 } */
 
-nav {
+/* nav {
   display: flex;
   flex-direction: row;
   justify-content: center;
   background-image: linear-gradient(to bottom, #6BCAE2, #e3f7fc);
+} */
 
+/* .nav-link {
+  display: flex;
+  align-content: center;
+  color: saddlebrown;
+} */
+
+.nav-link{
+  margin-left: 20px;
+}
+
+.addBtn{
+  background-color: #e2716b;
+  border-radius: 1rem;
+  justify-content: space-around;
+  margin-left: 20px;
+  padding: .5rem;
+}
+
+.nav-links{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .logo {
   height: 6rem;
   border-radius: 5rem;
   margin-top: .5rem;
-  border: solid .25rem #6BCBE2;
-}
-
-.logo2 {
-  height: 6rem;
-  border-radius: 5rem;
-  margin-bottom: .5rem;
-  border: solid .25rem #6BCBE2;
-}
-
-.nav-link {
-  display: flex;
-  align-content: center;
-  color: saddlebrown;
+  border: solid .25rem white;
 }
 
 .buttonContainer {
@@ -77,12 +88,11 @@ nav {
 }
 
 .button {
-  background-color: antiquewhite;
+  background-color: #e2716b;
   border-radius: 1rem;
   justify-content: space-around;
-  margin: auto;
+  margin: 20px;
   padding: .5rem;
-  color: brown
 }
 
 .button:link {
@@ -91,13 +101,11 @@ nav {
 }
 
 .button:visited {
-  background-color: skyblue;
-
+  background-color: #e2716b;
 }
 
 .button:hover {
-  color: antiquewhite;
-  background-color: paleturquoise;
+  background-color: #e2ad6b;
   box-shadow: 2px 5px 3px antiquewhite;
 
 }
@@ -163,6 +171,9 @@ nav {
 }
 
 .footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
   background-color: #6BCBE2;
   height: 7rem;
   position: relative;
@@ -173,3 +184,20 @@ nav {
   margin-top: 30rem;
   opacity: 75%;
 }
+
+
+/* HOME PAGE */
+.homeContainer{
+  display: flex;
+  justify-content: center;
+  padding-top: 400px;
+}
+
+.inner{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  align-items: center;
+  background-color: white;
+}
+

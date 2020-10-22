@@ -3,7 +3,11 @@ import * as yup from 'yup';
 import schema from '../testing/signUpSchema';
 import axios from 'axios';
 
+import {useHistory} from 'react-router-dom';
+
 export default function Signup() {
+
+    const {push} = useHistory();
 
     //INITIAL VALUES
     const initialFormValues = {
@@ -83,8 +87,7 @@ export default function Signup() {
         console.log(newUser)
         axios.post('https://expatjournalbw1020.herokuapp.com/signup', newUser)
             .then((res) => {
-                console.log('here is res.data', res.data)
-                // setUser([res.data]) //matt: we dont need this
+                push("/Signin")
             })
             .catch(err => {
                 console.log('POST ERR -->', err)

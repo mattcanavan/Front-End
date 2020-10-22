@@ -1,48 +1,40 @@
 import React from "react";
 import { Link, BrowserRouter as Router} from "react-router-dom";
 import logo from './images/logo1.png'
-export default function Footer() {
+export default function Header() {
 
     const signOut = ( ) => {
         window.localStorage.removeItem('token');
     }
 
     return (
-    
+
         <div className="footer">
-         
             <br></br>
-            
             <nav className="nav-links">
-                <div className='button'>
-                <Link className="nav-link"to="/">Expat Journal</Link>
-                </div>
-                <div className='button'>
-                <Link className="nav-link" to ="/Signin">Login</Link>
-                </div>
-                <div className='button'>
-                <Link className="nav-link" to ="/Signup">Register</Link>
-                </div>
-                <div className='button'>
-                <Link className="nav-link" to ="/posts">stories</Link>
-                </div>
-                <div className='button'>
-                <Link className="nav-link" to ="/Signin" onClick={signOut}>Sign out</Link>
-                </div>
-                <div className='button'>
-                <Link className="nav-link" to ="/posts/add">ADD new post</Link>
-                </div>
-                <div>
-           <img className='logo2' src={logo} alt="Logo" />
-           
-           </div>
-           <br></br>
-           <div>
-           <p>copyright 2020</p>
-           </div>
-               
+                
+                <Link className="nav-link button" to="/">Home</Link>
+                
+                
+                <Link className="nav-link button" to ="/Signin">Login</Link>
+                
+                
+                <Link className="nav-link button" to ="/Signup">Register</Link>
+                
+                
+                <Link className="nav-link button" to ="/posts">Stories</Link>
+                
+                
+                <Link className="nav-link button" to ="/Signin" onClick={signOut}>Sign out</Link>
+                
+                
+                <Link className="nav-link addBtn" to ="/posts/add">Add New Story</Link>
+                
             </nav>
-           
+            <div>
+            <img className='logo' src={logo} alt="Logo" />
+           </div>
+           <h5>copywrite 2020</h5>
         </div>
   
         

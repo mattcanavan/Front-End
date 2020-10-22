@@ -10,6 +10,7 @@ import Header from './components/Header'
 import EditStory from './components/EditStory';
 import AddStory from './components/AddStory';
 import AddComment from './components/AddComment';
+import HomePage from './components/HomePage';
 // import Main from './components/Main';
 // import max3 from './images/max3.png';
 
@@ -28,12 +29,19 @@ function App() {
       </Switch> */}
      
       
+     <Route 
+     exact path="/"
+     component= {HomePage}
+     />
+
       <Route path="/Signup">
          <Signup ></Signup>
       </Route>
+
      <Route exact path="/Signin">
        <Signin />
      </Route>
+
      <Route exact path="/posts">
          <StoryDashBoard />
       </Route>

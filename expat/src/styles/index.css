@@ -21,33 +21,30 @@ body{
   background-size: cover;
 }
 
-
-
-#maxform{
+#maxform {
   display: flex;
   flex-direction: column;
   padding-bottom: .5rem;
   margin-bottom: 5rem;
-  }
+}
 
-  .maxFoot{
-    background-color: #6BCBE2;
-    height: 4rem;
-    position: absolute;
-    bottom: -1;
-    width: 100%;
-   
-  }
+/* .maxFoot {
+  background-color: #4360f0;
+  height: 4rem;
+  position: absolute;
+  bottom: -1;
+  width: 100%;
 
-  a{
-    text-decoration: none;
-    font-weight: bold;
-  }
+} */
 
-
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+}
 
  /* unvisited link */
-a:link {
+ a:link {
   color: darkgoldenrod ;
   transition: 0.3s;
   
@@ -55,7 +52,7 @@ a:link {
 
 /* visited link */
 a:visited {
-  color: #24abc9;
+  color: white;
   transition: 0.3s;
 }
 
