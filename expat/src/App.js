@@ -10,6 +10,9 @@ import Header from './components/Header'
 import EditStory from './components/EditStory';
 import AddStory from './components/AddStory';
 import AddComment from './components/AddComment';
+// import max3 from './images/max3.png';
+
+
 
 function App() {
 
@@ -22,7 +25,7 @@ function App() {
         <PrivateRoute path="/posts" component={StoryDashBoard}/>
         <Route exact path="/Signin" component={Signin} />
       </Switch> */}
-        
+     
       
       <Route path="/Signup">
          <Signup ></Signup>
@@ -52,6 +55,7 @@ function App() {
     </div>
   </Router>
     
+   
   );
 }
 
