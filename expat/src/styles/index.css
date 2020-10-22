@@ -15,10 +15,12 @@ code {
 
 body{
   
-  background: url('/images/max3.png');
-  /* background-size: vh1000 */
+
   background: antiquewhite;
-  color: slategray
+  color: slategray;
+  background-image: url("../components/images/max3.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
@@ -26,5 +28,28 @@ body{
 #maxform{
   display: flex;
   flex-direction: column;
-  background-image: url("/images/max3.png");
+  padding-bottom: .5rem;
+  margin-bottom: 5rem;
+  
   }
+
+  .maxFoot{
+    background-color: #6BCBE2;
+    height: 4rem;
+    position: absolute;
+    bottom: -1;
+    width: 100%;
+  }
+
+  .nav-link:hover{
+    color: #50c44a;
+    
+    }
+   /* .nav-link:visited{
+    color: #ef7f34;
+  }  */
+
+  /* .nav-link:active{
+   color: #139df9;
+  } */
+  

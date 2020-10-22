@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Footer from './components/Footer';
 import Signin from './components/Signin';
 import Signup from './components/Signup';
 import './styles/App.css';
@@ -10,6 +10,7 @@ import Header from './components/Header'
 import EditStory from './components/EditStory';
 import AddStory from './components/AddStory';
 import AddComment from './components/AddComment';
+// import Main from './components/Main';
 // import max3 from './images/max3.png';
 
 
@@ -51,10 +52,19 @@ function App() {
       exact path = "/posts/comment/:id"
       component= {AddComment}
       />
+     
+      
+
+
+      {/* <Route path="/Footer"> */}
+       <Footer className="maxFoot" />
+        {/* </Route> */}
 
     </div>
+
+
   </Router>
-    
+   
    
   );
 }
