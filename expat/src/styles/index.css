@@ -14,11 +14,11 @@ code {
 }
 
 body{
-  background: antiquewhite;
   color: black;
-  background-image: url("../components/images/max3.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url('https://images.unsplash.com/photo-1472148439583-1f4cf81b80e0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80');
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: center;
 }
 
 #maxform {
@@ -41,19 +41,19 @@ a {
   text-decoration: none;
   font-weight: bold;
   color: white;
+  text-shadow: 2px 1px black;
 }
 
- /* unvisited link */
+ /* unvisited link
  a:link {
   color: darkgoldenrod ;
   transition: 0.3s;
   
-}
+} */
 
 /* visited link */
 a:visited {
   color: white;
-  transition: 0.3s;
 }
 
 /* mouse over link */
@@ -64,7 +64,7 @@ a:hover {
 
 /* selected link */
 a:active {
-  color: orange;
+  color: #3363dd;
   transition: 0.3s;
 }
   

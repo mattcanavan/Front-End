@@ -1,7 +1,9 @@
 import React from "react";
 import { Link, BrowserRouter as Router} from "react-router-dom";
 import logo from './images/logo1.png'
-export default function Header() {
+
+
+export default function Footer() {
 
     const signOut = ( ) => {
         window.localStorage.removeItem('token');
@@ -10,7 +12,7 @@ export default function Header() {
     return (
 
         <div className="footer">
-            <br></br>
+            {/* <br></br>
             <nav className="nav-links">
                 
                 <Link className="nav-link button" to="/">Home</Link>
@@ -33,7 +35,7 @@ export default function Header() {
             </nav>
             <div>
             <img className='logo' src={logo} alt="Logo" />
-           </div>
+           </div> */}
            <h5>copywrite 2020</h5>
         </div>
   

@@ -72,7 +72,7 @@ export default function StoryDashBoard(props) {
 
                 <div className='cardText'> 
                     <h1 className="title">{singlePost.title}</h1>
-                    {/* <h3>Story by: {singlePost.username}</h3> */}
+                    <h3>Story by: {singlePost.username}</h3>
                     <h5 className="description">User Story: {singlePost.description}</h5>
                 </div>
 
@@ -87,7 +87,7 @@ export default function StoryDashBoard(props) {
                         if(singleComment.postId === singlePost.postId){
                             return (
                             <div className="commentsContainer" key={singleComment.commentId}>
-                                <h5 className="username">{singleComment.username}:</h5>
+                                <h5 className="username">{singleComment.username}:&nbsp;</h5>
                                 <h5 className="comment">{singleComment.comment}</h5>
                             </div>)
                         }
