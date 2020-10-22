@@ -33,7 +33,12 @@ export default function Footer() {
                 <Link className="nav-link" to ="/posts/add">ADD new post</Link>
                 </div>
                 <div>
-           <img className='logo2' src={logo} alt="Logo" />;
+           <img className='logo2' src={logo} alt="Logo" />
+           
+           </div>
+           <br></br>
+           <div>
+           <p>copyright 2020</p>
            </div>
                
             </nav>
