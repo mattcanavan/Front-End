@@ -46,24 +46,31 @@ body{
     text-decoration: none;
   }
 
+
+  
  /* unvisited link */
 a:link {
   color: darkgoldenrod ;
+  transition: 0.3s;
+  
 }
 
 /* visited link */
 a:visited {
   color: #2dbc25;
+  transition: 0.3s;
 }
 
 /* mouse over link */
 a:hover {
   color: #3363dd;
+  transition: 0.3s;
 }
 
 /* selected link */
 a:active {
   color: orange;
+  transition: 0.3s;
 }
   
   input[type=text] {
