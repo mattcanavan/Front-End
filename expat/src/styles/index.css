@@ -14,10 +14,8 @@ code {
 }
 
 body{
-  
-
   background: antiquewhite;
-  color: slategray;
+  color: black;
   background-image: url("../components/images/max3.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -30,7 +28,6 @@ body{
   flex-direction: column;
   padding-bottom: .5rem;
   margin-bottom: 5rem;
-  
   }
 
   .maxFoot{

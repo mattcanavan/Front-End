@@ -1,16 +1,12 @@
 .App {
   text-align: center;
-  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+/* *{
+  border: 1px tomato solid;
+} */
 
 #maxform {
-  
   background-color: antiquewhite;
   display: flex;
   flex-direction: column;
@@ -26,18 +22,16 @@
   border-radius: 2rem;
 }
 
-.header{
+.header {
   display: flex;
   text-align: center;
   flex-direction: row;
-  /* background-color: #6BCAE2; */
-  height: 5rem;
+  height: 8rem;
   background-image: linear-gradient(to bottom, #6BCAE2, #e3f7fc);
   opacity: 80%;
-
-  
-  
+  padding-left: 20px;
 }
+
 .content {
   min-height: calc(100vh - 70px);
 }
@@ -49,113 +43,133 @@
   margin:auto;
 } */
 
-nav{
+nav {
   display: flex;
   flex-direction: row;
   justify-content: center;
   background-image: linear-gradient(to bottom, #6BCAE2, #e3f7fc);
-  
+
 }
 
-
-.logo{
+.logo {
   height: 6rem;
   border-radius: 5rem;
   margin-top: .5rem;
   border: solid .25rem #6BCBE2;
 }
 
-.logo2{
+.logo2 {
   height: 6rem;
   border-radius: 5rem;
   margin-bottom: .5rem;
   border: solid .25rem #6BCBE2;
 }
-.nav-link{
+
+.nav-link {
   display: flex;
   align-content: center;
   color: saddlebrown;
-  
-
-  
 }
 
-
-
-.button{
-background-color: antiquewhite;
-border-radius: 1rem;
-justify-content: space-around;
-margin: auto;
-margin-left: .5rem;
-padding: .5rem;
-color: brown
-
-
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
 }
-.button:link{
+
+.button {
+  background-color: antiquewhite;
+  border-radius: 1rem;
+  justify-content: space-around;
+  margin: auto;
+  padding: .5rem;
+  color: brown
+}
+
+.button:link {
   background-color: almond;
   box-shadow: 2px 5px #6BCAE2;
 }
 
-.button:visited{
+.button:visited {
   background-color: skyblue;
-  
+
 }
 
-.button:hover{
-  color:antiquewhite;
+.button:hover {
+  color: antiquewhite;
   background-color: paleturquoise;
   box-shadow: 2px 5px 3px antiquewhite;
-  
+
 }
 
-
-
-
-
-*{
-  align-content: center;
-}
-
-.parent {
+.parentOfCardGrid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 20px;
 }
 
-.container {
+.cardContainer {
   display: flex;
   flex-direction: column;
   align-content: center;
   padding: 20px;
   border: 2px black solid;
-  height: 400px;
-  width: 300px;
+  min-height: 300px;
+  width: 500px;
   margin: 20px;
+  background-color: ivory;
 }
 
-.container img {
-  height: 100px;
+.cardContainer img {
+  max-height: 300px;
+  max-width: 450px;
 }
 
-.container h3{
+.cardContainer .cardText .title {
   text-decoration: underline;
 }
 
-
-.userName h4{
+.cardContainer .cardText .description {
+  min-height: 50px;
   font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
 }
 
+.commentSection{
+  height: 100px;
+  overflow-y: scroll;
+  border: 1px black dashed;
+  margin-top: 20px;
+  padding-left: 5px;
+}
 
-.footer{
-  
+.commentsContainer{
+  display: flex;
+  flex-direction: row;
+  height: 20px;
+}
+
+.commentsContainer .username{
+  font-weight: bolder;
+}
+
+.commentsContainer .comment{
+  font-weight: 500;
+}
+
+.footer {
   background-color: #6BCBE2;
-    height: 7rem;
-    position: relative;
-  right: 0;bottom:0;left:0;
-    width: 100%;
-    margin-top: 30rem;
-   opacity:75%;
+  height: 7rem;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin-top: 30rem;
+  opacity: 75%;
 }
-

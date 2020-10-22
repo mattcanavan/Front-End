@@ -13,7 +13,7 @@ export default function Header() {
     
         <div className="header">
            <div>
-           <img className='logo' src={logo} alt="Logo" />;
+           <img className='logo' src={logo} alt="Logo" />
            </div>
             <br></br>
             <nav className="nav-links">
