@@ -109,7 +109,7 @@ export default function Signup() {
 
                     <div>
                         <h3>Sign Up</h3>
-                        <label> username:
+                        <label> Username:
                             <input
                                 name='username'
                                 type='text'

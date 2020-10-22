@@ -53,3 +53,18 @@ body{
    color: #139df9;
   } */
   
+  input[type=text] {
+    border-radius: .33rem;
+    border: solid .10rem grey;
+    padding: .25rem;
+  }
+  input[type=password] {
+    border-radius: .33rem;
+    border: solid .10rem grey;
+    padding: .25rem;
+  }
+  input[type=email] {
+    border-radius: .33rem;
+    border: solid .10rem grey;
+    padding: .25rem;
+  }
