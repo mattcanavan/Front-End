@@ -182,8 +182,8 @@
 /* HOME PAGE */
 .homeContainer{
   display: flex;
-  justify-content: center;
-  padding-top: 300px;
+  justify-content: space-evenly;
+  padding-top: 200px;
  }
 
 .inner{
@@ -192,5 +192,14 @@
   width: 40%;
   align-items: center;
   background-color: white;
+  color:black;
+  font-size: 2rem;
+  text-shadow: 4px 8px 6px solid black(1,1, 1, 1);
+}
+
+.sand{
+  width: 40rem;
+  border-radius: 50%;
+  
 }
 
