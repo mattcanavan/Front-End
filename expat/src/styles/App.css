@@ -183,7 +183,7 @@
 .homeContainer{
   display: flex;
   justify-content: center;
-  padding-top: 300px;
+  padding-top: 200px;
  }
 
 .inner{
@@ -191,6 +191,18 @@
   flex-direction: column;
   width: 40%;
   align-items: center;
-  background-color: white;
+  /* background-color: white; */
+  color:#f5f9fa;
+  font-size: 2rem;
+  font-weight:900;
+  padding-left: 1rem;
+  text-shadow: 4px 8px 6px solid black(1,1, 1, 1);
+ 
+}
+
+.sand{
+  width: 40rem;
+  border-radius: 50%;
+  
 }
 
