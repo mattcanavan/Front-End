@@ -2,6 +2,47 @@ import React, { useState, useEffect} from 'react';
 import {axiosWithAuth} from '../utils/axiosWithAuth';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import styled, { keyframes } from "styled-components";
+// styled components
+ const kf = keyframes`
+//  50% {
+//   transform: scale(0.8);
+// }
+   100% {
+    opacity: 100;
+    transform: scale(1);
+  } 
+ `; 
+const StyledForm = styled.div`
+  opacity: 100;
+  transform: scale(2);
+  animation: ${kf} .5s forwards;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    transition: all 0.3s ease-in-out;
+    transform: scale(3)
+  }
+  button {
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      transition: all 0.8s ease-in-out;
+      transform: scale(1.3)
+    }
+    .cardContainer .cardText .title .parentOfCardGrid {
+    transition: all 0.8s ease-in-out;
+    &:hover {
+      transition: all 0.8s ease-in-out;
+      transform: scale(2)
+    }
+    
+  }
+  a {
+    transition: all 0.8s ease-in-out;
+    &:hover {
+      transition: all 0.8s ease-in-out;
+    }
+  }
+`;
 
 export default function StoryDashBoard(props) {
     
@@ -61,7 +102,7 @@ export default function StoryDashBoard(props) {
         return <h1>Loading from database...</h1>
     }
 
-    return (
+    return (<StyledForm>
         <div className='parentOfCardGrid'>
             {posts.map(singlePost => (
                 <div className='cardContainer' key={singlePost.postId}>
@@ -98,5 +139,7 @@ export default function StoryDashBoard(props) {
             )}
 
         </div>
+    </StyledForm>
+        
     )
 }
