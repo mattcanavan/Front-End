@@ -12,8 +12,7 @@ import styled, { keyframes } from "styled-components";
     opacity: 100;
     transform: scale(1);
   } 
- `; 
-const StyledForm = styled.div`
+ `; const StyledForm = styled.div`
   opacity: 100;
   transform: scale(2);
   animation: ${kf} .5s forwards;
@@ -25,10 +24,11 @@ const StyledForm = styled.div`
   button {
     transition: all 0.2s ease-in-out;
     &:hover {
-      transition: all 0.8s ease-in-out;
-      transform: scale(1.3)
+      transition: all 0.2s ease-in-out;
+      transform: scale(1.2)
     }
-    .cardContainer .cardText .title .parentOfCardGrid {
+}
+    div {
     transition: all 0.8s ease-in-out;
     &:hover {
       transition: all 0.8s ease-in-out;
@@ -42,7 +42,9 @@ const StyledForm = styled.div`
       transition: all 0.8s ease-in-out;
     }
   }
-`;
+` ;
+
+
 
 export default function StoryDashBoard(props) {
     
