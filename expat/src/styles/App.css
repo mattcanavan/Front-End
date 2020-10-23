@@ -182,7 +182,7 @@
 /* HOME PAGE */
 .homeContainer{
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   padding-top: 200px;
  }
 
@@ -191,13 +191,10 @@
   flex-direction: column;
   width: 40%;
   align-items: center;
-  /* background-color: white; */
-  color:#f5f9fa;
+  background-color: white;
+  color:black;
   font-size: 2rem;
-  font-weight:900;
-  padding-left: 1rem;
   text-shadow: 4px 8px 6px solid black(1,1, 1, 1);
- 
 }
 
 .sand{
