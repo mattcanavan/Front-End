@@ -25,7 +25,6 @@ export default function Signup() {
     }
 
     //STATE
-    const [users, setUser] = useState([])
     const [formValues, setFormValues] = useState(initialFormValues)
     const [disabled, setDisabled] = useState(initialDisabled)
     const [formErrors, setFormErrors] = useState(initialFormErrors)

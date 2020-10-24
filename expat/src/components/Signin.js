@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom'
 
 export default function Signup( props ) {
 
+    const {push} = useHistory();
     //INITIAL VALUES
     const initialFormValues = {
         username: '',
@@ -20,12 +21,9 @@ export default function Signup( props ) {
     }
 
     //STATE
-    const [userName, setUserName] = useState(initialFormValues);
-    const [credentials, setCredentials] = useState(initialFormValues)
     const [formValues, setFormValues] = useState(initialFormValues);
     const [disabled, setDisabled] = useState(initialDisabled);
     const [formErrors, setFormErrors] = useState(initialFormErrors);
-    const {push} = useHistory();
     
 
     //SIDE EFFECTS
@@ -78,11 +76,6 @@ export default function Signup( props ) {
                 localStorage.setItem('token', res.data.token)
                 localStorage.setItem('username', formValues.username)
             push('/posts')//useHistory
-            console.log(formValues.username)
-            console.log(res)
-            // setUserName(credentials.username);
-            setCredentials(initialFormValues);
-            // getPosts();
             })
             .catch(err => {
                 console.log('POST ERR -->', err)

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, BrowserRouter as Router} from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from './images/logo1.png'
 export default function Header() {
 

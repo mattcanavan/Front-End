@@ -16,7 +16,6 @@ export default function EditStory() {
     const id = params.id;
 
     //STATE
-    // const [formValues, setFormValues] = useState(initialFormValues);
     const [post, setPost] = useState(initialPostValues);;
 
     ///// HELPER FUNCTIONS

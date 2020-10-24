@@ -5,7 +5,7 @@ import Signup from './components/Signup';
 import './styles/App.css';
 
 import StoryDashBoard from './components/StoryDashBoard';
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
+import { Route, BrowserRouter as Router } from "react-router-dom";
 import Header from './components/Header'
 import EditStory from './components/EditStory';
 import AddStory from './components/AddStory';

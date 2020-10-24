@@ -1,6 +1,5 @@
 import React, { useState, useEffect} from 'react';
 import {axiosWithAuth} from '../utils/axiosWithAuth';
-import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
 export default function StoryDashBoard(props) {
