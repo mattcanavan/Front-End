@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from './images/logo1.png'
+import logo from '../assests/images/logo1.png'
 export default function Header() {
 
     const signOut = ( ) => {
